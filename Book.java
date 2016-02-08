@@ -39,7 +39,7 @@ class Book
         return pages;
     }
     
-    public String getRefNumber(){
+    public String getRef(){
         return ref;
     }
     
@@ -51,13 +51,17 @@ class Book
         System.out.println(title);
     }
     
-    public void setRefNumber(String ref){
-        ref = getRefNumber();
+    public void setRef(String refNumber){
+        ref = refNumber;
     }
     
     public void printDetails(){
-        System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages);
-    }
+        if(ref == ""){
+            System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages + " Reference Number: ZZZ");
+        }else{
+            System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages + " Reference Number: " + ref);
+        }
+   }
     
     
     
