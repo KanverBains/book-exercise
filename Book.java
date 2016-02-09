@@ -52,7 +52,12 @@ class Book
     }
     
     public void setRef(String refNumber){
-        ref = refNumber;
+        if(refNumber.length() > 3){
+            ref = refNumber;
+        }else{
+            System.out.println("Sorry An error has occurred. Reference number must be at least 3 characters long");
+            System.out.println("Field was unchanged!");
+        }
     }
     
     public void printDetails(){
