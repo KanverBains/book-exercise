@@ -6,20 +6,19 @@
  * @author (Insert your name here.)
  * @version (Insert today's date here.)
  */
-class Book
-{
+class Book{
     // The fields.
     private String author;
     private String title;
     private int pages;
     private String ref = "";
+    private int borrowed = 0;
 
     /**
      * Set the author and title fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle, int bookPages, String refNumber)
-    {
+    public Book(String bookAuthor, String bookTitle, int bookPages, String refNumber){
         author = bookAuthor;
         title = bookTitle;
         pages = bookPages;
@@ -43,12 +42,20 @@ class Book
         return ref;
     }
     
+    public int getBorrowed(){
+        return borrowed;
+    }
+    
     public void printAuthor(){
         System.out.println(author);
     }
     
     public void printTitle(){
         System.out.println(title);
+    }
+    
+    public void setBorrowed(){
+        borrowed++;
     }
     
     public void setRef(String refNumber){
@@ -62,9 +69,9 @@ class Book
     
     public void printDetails(){
         if(ref == ""){
-            System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages + " Reference Number: ZZZ");
+            System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages + " Reference Number: ZZZ" + ", Borrowed: " + borrowed);
         }else{
-            System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages + " Reference Number: " + ref);
+            System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages + " Reference Number: " + ref + ", Borrowed: " + borrowed);
         }
    }
     
